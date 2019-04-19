@@ -1,74 +1,37 @@
-
-
+<!DOCTYPE HTML>
 <html>
-    
-<head>   
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<head>
+<style>
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
 
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
 
-
-
-    <style>
-        
-        #ball{
-            width: 5%;
-            height: 5%;
-            border-radius: black double 50% 50%;            
-        }
-        
-        
-    </style>
-    
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
 </head>
-
 <body>
 
-   
-    
-    
-          <img  id="ball" class="img" src="5.jpg">
+<p>Drag the W3Schools image into the rectangle:</p>
 
-    
-  
-    
-    <script>
-        var ball = document.getElementById('ball');
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="https://i.ytimg.com/vi/ZqKzVYILCGA/maxresdefault.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69">
 
-            ball.onmousedown = function(e) { // 1. отследить нажатие
-
-              // подготовить к перемещению
-              // 2. разместить на том же месте, но в абсолютных координатах
-              ball.style.position = 'absolute';
-              moveAt(e);
-              // переместим в body, чтобы мяч был точно не внутри position:relative
-              document.body.appendChild(ball);
-
-              ball.style.zIndex = 1000; // показывать мяч над другими элементами
-
-              // передвинуть мяч под координаты курсора
-              // и сдвинуть на половину ширины/высоты для центрирования
-              function moveAt(e) {
-                ball.style.left = e.pageX - ball.offsetWidth / 2 + 'px';
-                ball.style.top = e.pageY - ball.offsetHeight / 2 + 'px';
-              }
-
-              // 3, перемещать по экрану
-              document.onmousemove = function(e) {
-                moveAt(e);
-              }
-
-              // 4. отследить окончание переноса
-              ball.onmouseup = function() {
-                document.onmousemove = null;
-                ball.onmouseup = null;
-              }
-}
-      
-    </script>
 </body>
-
 </html>
