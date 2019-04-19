@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-#div1, #div2, #div3, #div4{
+#div1{
   float: left;
   width: 100px;
   height: 35px;
@@ -10,6 +10,49 @@
   padding: 10px;
   border: 1px solid black;
 }
+
+
+    #div2{
+      float: right;
+      width: 100px;
+      height: 35px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+    
+    #div3{
+      float: left;
+      width: 100px;
+      height: 35px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+      margin-top: 80%;
+      margin-left: -140px;
+    }
+    
+    #div4{
+      float: right;
+      width: 100px;
+      height: 35px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+      margin-top: 80%;
+      margin-right: -140px;
+    }
+    
+    #div5{
+         width: 100px;
+      height: 40px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid black;
+      margin-top:  40%;
+        margin-left: 40%;
+        border-radius: 50% 50%;
+    }
 </style>
 <script>
 function allowDrop(ev) {
@@ -38,11 +81,11 @@ function drop(ev) {
 
 <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-    <img src="https://png.pngtree.com/element_origin_min_pic/17/09/18/b7ff5522fb88b743bab12622ed8c0578.jpg"  draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31">
-    </div>
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">  </div>
 
 <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+    
+<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 </body>
 </html>
