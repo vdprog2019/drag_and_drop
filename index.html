@@ -2,90 +2,200 @@
 <html>
 <head>
 <style>
-#div1{
-  float: left;
-  width: 100px;
-  height: 35px;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
-}
+
+    #div1{
+    float: left;
+    width: 90px;
+    height: 35px;
+    margin-top: -470px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    z-index: 1;
+   }
 
 
     #div2{
-      float: right;
-      width: 100px;
+      
+      margin-top: -440px;
+      margin-left: 275px;
+      width: 90px;
       height: 35px;
-      margin: 10px;
+      z-index: 1;
       padding: 10px;
       border: 1px solid black;
+      margin-right: 40px;
     }
-    
+
     #div3{
-      float: left;
-      width: 100px;
+     
+      width: 90px;
       height: 35px;
       margin: 10px;
       padding: 10px;
       border: 1px solid black;
-      margin-top: 80%;
-      margin-left: -140px;
+      z-index: 1;
     }
-    
+
     #div4{
-      float: right;
-      width: 100px;
+      margin-top: -600px;
+      width: 90px;
       height: 35px;
       margin: 10px;
       padding: 10px;
       border: 1px solid black;
-      margin-top: 80%;
-      margin-right: -140px;
+      z-index: 1;
     }
-    
+
     #div5{
-         width: 100px;
-      height: 40px;
+      margin-left: 100px;
+      width: 90px;
+      height: 35px;
       margin: 10px;
       padding: 10px;
       border: 1px solid black;
-      margin-top:  40%;
-        margin-left: 40%;
-        border-radius: 50% 50%;
+      z-index: 1;
     }
+    
+
+
+    .main_div{
+      display: grid;
+
+    }
+    .text_inventory{
+      margin-left: 42%;
+      margin-top: 5%;
+    }
+
+    
+
+    #border_player{
+      border: 1px black solid;
+      width: 400px;
+      height: 500px;
+      margin-left: 200px;
+      
+    }
+
+    #png1{
+      width: 250px;
+      height: 450px;
+      margin-left: 85px;
+      margin-top: 20px;
+    }
+
+    #grid { 
+    display: grid;
+    grid-template-rows: 50px 50px 50px 50px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-gap: 10px;
+    margin-left: 700px;
+    margin-top: -400px;
+    
+    }
+
+    #grid > div {
+    font-size: 20px;
+    padding: 5px;;
+    border: black solid 1px;;
+    text-align: center;
+  }
+
+  #border_grid{
+    border: 3px solid black;
+    width: 500px;
+    height: 270px;
+    margin-left: 664px;
+    margin-top: -420px;
+  }
+
+  .range{
+    width: 400px;
+    height: 20px;
+    margin-left: 200px;
+  }
+   
 </style>
+
 <script>
-function allowDrop(ev) {
-  ev.preventDefault();
-}
 
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
 
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+
+
+    function range_color_changed()
+    {
+      var r = document.getElementById("color_border").value;
+      document.getElementById("border_player").style.backgroundColor = "rgb(" + r + ",0,0)";
+    }
+ 
 </script>
+
 </head>
-<body>
+<body >
 
-<h2>Drag and Drop</h2>
-<p>Drag the image back and forth between the two div elements.</p>
 
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img src="https://cdnb.artstation.com/p/assets/images/images/007/001/013/large/esthephannie-cavalcanti-sword.jpg?1502915918" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+
+<div class="main_div">
+
+        <div class="text_inventory">
+          <h2> Your Inventory </h2>
+        </div>
+        
+        <div id="border_player">
+              <img src="http://pngimg.com/uploads/medival_knight/medival_knight_PNG15943.png" id="png1">
+
+              <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <img src="https://img1.liveinternet.ru/images/attach/c/0/121/613/121613461_6.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+              </div>
+
+              <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <img src="http://pngimg.com/uploads/armour/armour_PNG19.png" draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31">
+              </div>
+
+              <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <img src="http://pngimg.com/uploads/armour/armour_PNG13.png" draggable="true" ondragstart="drag(event)" id="drag3" width="88" height="31">
+              </div>
+
+              
+
+       </div> 
+
+       <div id="grid">
+          <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div14" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div15" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div16" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div17" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div18" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div19" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div20" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="div21" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>
+
+       <input class="range" type="range" min="0" max="255" id="color_border" value="3" onchange="range_color_changed()">
+
+       
 </div>
-
-<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">  </div>
-
-<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
-    
-<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 </body>
 </html>
