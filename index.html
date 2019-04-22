@@ -38,17 +38,18 @@
     }
 
     #div4{
-      margin-top: -600px;
+      margin-top: 34px;
+      margin-left: 10px;       
       width: 90px;
       height: 35px;
-      margin: 10px;
       padding: 10px;
       border: 1px solid black;
       z-index: 1;
     }
-
+    
     #div5{
-      margin-left: 100px;
+   
+        
       width: 90px;
       height: 35px;
       margin: 10px;
@@ -138,7 +139,12 @@
     function range_color_changed()
     {
       var r = document.getElementById("color_border").value;
+        if( r == 0){
+             document.getElementById("border_player").style.backgroundColor = "rgb(255,255,255)";
+        }
+        else{
       document.getElementById("border_player").style.backgroundColor = "rgb(" + r + ",0,0)";
+        }
     }
  
 </script>
@@ -155,21 +161,24 @@
         </div>
         
         <div id="border_player">
-              <img src="http://pngimg.com/uploads/medival_knight/medival_knight_PNG15943.png" id="png1">
-
+                <div>
+                  <img src="http://pngimg.com/uploads/medival_knight/medival_knight_PNG15943.png" id="png1">
+                </div>
               <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
                   <img src="https://img1.liveinternet.ru/images/attach/c/0/121/613/121613461_6.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
               </div>
 
               <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
                   <img src="http://pngimg.com/uploads/armour/armour_PNG19.png" draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31">
-              </div>
-
+            </div>
+       
               <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
                   <img src="http://pngimg.com/uploads/armour/armour_PNG13.png" draggable="true" ondragstart="drag(event)" id="drag3" width="88" height="31">
               </div>
-
-              
+            
+            <div id="div4"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                  <img src="http://pngimg.com/uploads/armour/armour_PNG13.png" draggable="true" ondragstart="drag(event)" id="drag4" width="88" height="31">
+            </div>
 
        </div> 
 
